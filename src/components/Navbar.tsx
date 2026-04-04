@@ -18,6 +18,7 @@ const sections = [
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     smoother = ScrollSmoother.create({
@@ -50,7 +51,6 @@ const Navbar = () => {
       ScrollSmoother.refresh(true);
     });
 
-    // Active section highlight on scroll
     const handleScroll = () => {
       const scrollY = window.scrollY + window.innerHeight * 0.3;
       let current = "";
@@ -69,13 +69,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleMobileNavClick = (id: string) => {
+    setMenuOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
           NG
         </a>
-        <ul>
+
+        {/* Desktop nav links */}
+        <ul className="desktop-nav">
           {sections.map(({ id, label }) => (
             <li key={id}>
               <a
@@ -88,7 +98,35 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+
+        {/* Mobile hamburger button */}
+        <button
+          className={`hamburger ${menuOpen ? "hamburger-open" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
+
+      {/* Mobile dropdown menu */}
+      <div className={`mobile-menu ${menuOpen ? "mobile-menu-open" : ""}`}>
+        {sections.map(({ id, label }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={`mobile-menu-item ${activeSection === id ? "mobile-menu-active" : ""}`}
+            onClick={() => handleMobileNavClick(id)}
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+      {menuOpen && (
+        <div className="mobile-menu-overlay" onClick={() => setMenuOpen(false)} />
+      )}
 
       <div className="landing-circle1"></div>
       <div className="landing-circle2"></div>

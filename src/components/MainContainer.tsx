@@ -10,6 +10,7 @@ import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import FinanceOverlay from "./FinanceOverlay";
+import BottomNav from "./BottomNav";
 import setSplitText from "./utils/splitText";
 
 const TechStack = lazy(() => import("./TechStack"));
@@ -37,6 +38,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Navbar />
       <SocialIcons />
       <FinanceOverlay />
+      <BottomNav />
       {isDesktopView && children}
       <div id="smooth-wrapper">
         <div id="smooth-content">
