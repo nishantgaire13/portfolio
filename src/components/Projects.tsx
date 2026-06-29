@@ -27,7 +27,7 @@ const projects: Project[] = [
       "Paragraph citations",
     ],
     stats: ["25 NAS", "17 NFRS standards"],
-    link: "#",
+    link: "https://the-nfrs-archive.vercel.app/",
   },
   {
     index: "02",
@@ -43,7 +43,7 @@ const projects: Project[] = [
       "Bikram Sambat calendar",
     ],
     stats: ["100% client-side", "Nepal-first (NPR)"],
-    link: "#",
+    link: "https://paisatrack-five.vercel.app/",
   },
 ];
 
