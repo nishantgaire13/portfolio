@@ -5,6 +5,7 @@ const navItems = [
   { id: "landingDiv", label: "Home",   icon: "⌂" },
   { id: "about",      label: "About",  icon: "👤" },
   { id: "education",  label: "Edu",    icon: "🎓" },
+  { id: "projects",   label: "Work",   icon: "✦" },
   { id: "work",       label: "Certs",  icon: "📜" },
   { id: "contact",    label: "Contact",icon: "✉" },
 ];

@@ -133,59 +133,85 @@ export function setCharTimeline(
 }
 
 export function setAllTimeline() {
-  const careerTimeline = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".career-section",
-      start: "top 30%",
-      end: "100% center",
-      scrub: true,
-      invalidateOnRefresh: true,
-    },
-  });
-  careerTimeline
-    .fromTo(
-      ".career-timeline",
-      { maxHeight: "10%" },
-      { maxHeight: "100%", duration: 0.5 },
-      0
-    )
+  const sections = gsap.utils.toArray<HTMLElement>(".career-section");
 
-    .fromTo(
-      ".career-timeline",
-      { opacity: 0 },
-      { opacity: 1, duration: 0.1 },
-      0
-    )
-    .fromTo(
-      ".career-info-box",
-      { opacity: 0 },
-      { opacity: 1, stagger: 0.1, duration: 0.5 },
-      0
-    )
-    .fromTo(
-      ".career-dot",
-      { animationIterationCount: "infinite" },
-      {
-        animationIterationCount: "1",
-        delay: 0.3,
-        duration: 0.1,
+  sections.forEach((section) => {
+    const rail = section.querySelector(".career-timeline");
+    const dot = section.querySelector(".career-dot");
+    const boxes = section.querySelectorAll(".career-info-box");
+    const nodes = section.querySelectorAll(".career-node");
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: section,
+        start: "top 72%",
+        end: "bottom 78%",
+        scrub: true,
+        invalidateOnRefresh: true,
       },
-      0
-    );
+    });
 
-  if (window.innerWidth > 1024) {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: "20%", duration: 0.5, delay: 0.2 },
-      0
-    );
-  } else {
-    careerTimeline.fromTo(
-      ".career-section",
-      { y: 0 },
-      { y: 0, duration: 0.5, delay: 0.2 },
-      0
-    );
+    tl.fromTo(rail, { opacity: 0 }, { opacity: 1, duration: 0.1 }, 0)
+      .fromTo(
+        rail,
+        { maxHeight: "6%" },
+        { maxHeight: "100%", duration: 0.7 },
+        0
+      )
+      .fromTo(
+        boxes,
+        { opacity: 0, y: 45 },
+        {
+          opacity: 1,
+          y: 0,
+          stagger: 0.18,
+          duration: 0.55,
+        },
+        0.05
+      )
+      .fromTo(
+        nodes,
+        { scale: 0 },
+        { scale: 1, stagger: 0.18, duration: 0.3, ease: "back.out(2)" },
+        0.12
+      )
+      .fromTo(
+        dot,
+        { animationIterationCount: "infinite" },
+        { animationIterationCount: "1", delay: 0.3, duration: 0.1 },
+        0
+      );
+  });
+
+  const projectsSection = document.querySelector(".projects-section");
+  if (projectsSection) {
+    const projectsTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: projectsSection,
+        start: "top 72%",
+        invalidateOnRefresh: true,
+      },
+    });
+
+    projectsTl
+      .fromTo(
+        ".projects-head",
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+        0
+      )
+      .fromTo(
+        ".project-card",
+        { opacity: 0, y: 60, scale: 0.97 },
+        {
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.8,
+          stagger: 0.18,
+          ease: "power3.out",
+        },
+        0.15
+      );
   }
 }

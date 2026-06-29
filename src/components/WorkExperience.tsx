@@ -14,21 +14,22 @@ const WorkExperience = () => {
           </div>
 
           <div className="career-info-box">
-            <div className="career-info-in">
-              <div className="career-role">
+            <span className="career-node"></span>
+            <div className="career-card">
+              <div className="career-card-head">
                 <h4>Associate Analyst</h4>
-                <h5>Maven Solutions · Kathmandu, Nepal</h5>
+                <span className="career-year">2023 – 24</span>
               </div>
-              <h3>2023–24</h3>
+              <h5>Maven Solutions · Kathmandu, Nepal</h5>
+              <p>
+                Spent close to a year as an Associate Analyst, owning quality
+                assurance across new web and mobile releases by identifying
+                bugs, reporting issues, and verifying fixes through multiple
+                product cycles. Also supported the company's career and resume
+                platform, refining content workflows and helping sharpen the
+                overall user experience.
+              </p>
             </div>
-            <p>
-              Worked as an Associate Analyst at Maven Solutions for approximately
-              11 months. Contributed to quality assurance and testing of new web
-              and mobile applications, identifying bugs, reporting issues, and
-              verifying fixes across multiple product cycles. Also supported the
-              company's career and resume platform, refining content workflows
-              and helping improve the overall user experience.
-            </p>
           </div>
 
         </div>
