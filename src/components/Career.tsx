@@ -22,10 +22,10 @@ const Career = () => {
               <h3>NOW</h3>
             </div>
             <p>
-              Currently pursuing ACCA (Association of Chartered Certified
-              Accountants) — building a strong foundation in financial
-              reporting, management accounting, taxation, audit, and
-              business strategy.
+              Currently pursuing the ACCA (Association of Chartered Certified
+              Accountants) qualification, building a strong foundation in
+              financial reporting, management accounting, taxation, audit,
+              and business strategy.
             </p>
           </div>
 

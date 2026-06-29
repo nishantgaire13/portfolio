@@ -59,7 +59,7 @@ const WhatIDo = () => {
             </svg>
           </div>
           <div
-            className="what-content what-noTouch"
+            className="what-content what-noTouch what-single"
             ref={(el) => setRef(el, 0)}
           >
             <div className="what-border1">
@@ -90,56 +90,22 @@ const WhatIDo = () => {
               <h3>FINANCE</h3>
               <h4>Analysis & Accounting</h4>
               <p>
-                Finance professional skilled in financial statements,
-                management accounting, budgeting, and business strategy —
-                backed by ACCA studies and real-world exposure.
+                An aspiring finance professional pursuing ACCA alongside a
+                BBS degree, with hands-on experience in financial reporting,
+                management accounting, and budgeting. I enjoy turning raw
+                numbers into clear, decision-ready insight, and I love
+                pairing strong accounting fundamentals with AI tools to
+                work faster, dig deeper, and think sharper.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
                 <div className="what-tags">Financial Statements</div>
-                <div className="what-tags">Budgeting & Forecasting</div>
                 <div className="what-tags">Financial Analysis</div>
                 <div className="what-tags">Management Accounting</div>
-                <div className="what-tags">Business Strategy</div>
+                <div className="what-tags">Budgeting & Forecasting</div>
+                <div className="what-tags">NFRS / IFRS</div>
                 <div className="what-tags">Excel Modelling</div>
-              </div>
-              <div className="what-arrow"></div>
-            </div>
-          </div>
-          <div
-            className="what-content what-noTouch"
-            ref={(el) => setRef(el, 1)}
-          >
-            <div className="what-border1">
-              <svg height="100%">
-                <line
-                  x1="0"
-                  y1="100%"
-                  x2="100%"
-                  y2="100%"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeDasharray="6,6"
-                />
-              </svg>
-            </div>
-            <div className="what-corner"></div>
-            <div className="what-content-in">
-              <h3>AI & DIGITAL</h3>
-              <h4>Tools & Productivity</h4>
-              <p>
-                Proficient in leveraging AI tools for research, writing,
-                analysis, and workflow automation — making work smarter
-                and faster across any domain.
-              </p>
-              <h5>Skillset & tools</h5>
-              <div className="what-content-flex">
-                <div className="what-tags">ChatGPT</div>
-                <div className="what-tags">Claude</div>
-                <div className="what-tags">Cursor</div>
-                <div className="what-tags">Manus</div>
-                <div className="what-tags">Video Editing</div>
-                <div className="what-tags">MS Office</div>
+                <div className="what-tags">AI-Assisted Workflows</div>
               </div>
               <div className="what-arrow"></div>
             </div>

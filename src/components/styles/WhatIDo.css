@@ -239,6 +239,16 @@
   border: 1px solid #ffffff50;
   border-radius: 30px;
 }
+.what-single,
+.what-single.what-noTouch:hover {
+  min-height: 100%;
+  height: 100%;
+  padding: 50px;
+}
+.what-single h5,
+.what-single .what-content-flex {
+  opacity: 1;
+}
 @media only screen and (max-width: 1600px) {
   .what-box h2 {
     margin-right: 18%;

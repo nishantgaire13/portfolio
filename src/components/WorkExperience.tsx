@@ -24,9 +24,9 @@ const WorkExperience = () => {
             <p>
               Worked as an Associate Analyst at Maven Solutions for approximately
               11 months. Contributed to quality assurance and testing of new web
-              and mobile applications — identifying bugs, reporting issues, and
-              verifying fixes across multiple product cycles. Also worked on the
-              company's career and resume platform, supporting content workflows
+              and mobile applications, identifying bugs, reporting issues, and
+              verifying fixes across multiple product cycles. Also supported the
+              company's career and resume platform, refining content workflows
               and helping improve the overall user experience.
             </p>
           </div>
